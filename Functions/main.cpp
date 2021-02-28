@@ -17,6 +17,19 @@ void Print(int arr[], const int n)
 
 }
 
+void Shift(int arr[], const int n, const int number_of_shifts)
+{
+	for (int i = 0; i < number_of_shifts; i++)
+	{
+		int buffer = arr[0];
+		for (int j = 0; j < n; j++)
+		{
+			arr[j] = arr[j + 1];
+
+		}
+		arr[n - 1] = buffer;
+	}
+}
 
 int main()
 {
@@ -32,16 +45,7 @@ int main()
 
 	int number_of_shifts;
 	cout << "Input number of shifts"; cin >> number_of_shifts;
-	for (int i = 0; i < number_of_shifts; i++)
-	{
-		int buffer = arr[0];
-		for (int j = 0; j < n; j++)
-		{
-			arr[j] = arr[j + 1];
-
-		}
-		arr[n - 1] = buffer;
-	}
+	Shift(arr, n, number_of_shifts);
 	Print(arr, n);
 
 
@@ -55,16 +59,7 @@ int main()
 	Print(brr, m);
 
 	cout << "Input number of shifts"; cin >> number_of_shifts;
-	for (int i = 0; i < number_of_shifts; i++)
-	{
-		int buffer = brr[0];
-		for (int j = 0; j < m; j++)
-		{
-			brr[j] = brr[j + 1];
-
-		}
-		brr[m - 1] = buffer;
-	}
+	Shift(brr, n, number_of_shifts);
 	Print(brr, m);
 
 	return 0;
