@@ -2,6 +2,22 @@
 using namespace std;
 #define tab "\t"
 
+void FillRand(int arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		arr[i] = rand(); // random from 0 to 32 676
+
+	}
+}
+
+void Print(int arr[], const int n)
+{
+	for (int i = 0; i < n; i++) cout << arr[i] << tab; cout << endl;
+
+}
+
+
 int main()
 {
 	
@@ -11,12 +27,8 @@ int main()
 	int arr[n];
 	// fill the array with random numbers
 
-	for (int i=0; i<n; i++)
-	{
-		arr[i] = rand(); // random from 0 to 32 676
-
-	}
-	for (int x : arr) cout << x << tab; cout << endl;
+	FillRand(arr, n);
+	Print(arr, n);
 
 	int number_of_shifts;
 	cout << "Input number of shifts"; cin >> number_of_shifts;
@@ -30,17 +42,17 @@ int main()
 		}
 		arr[n - 1] = buffer;
 	}
-	for (int x : arr) cout << x << tab; cout << endl;
+	Print(arr, n);
 
 
-	const int m = 5;
+	const int m = 8;
 	int brr[m];
 	for (int i = 0; i < m; i++)
 	{
 		brr[i] = rand();
 	}
 
-	for (int x : brr) cout << x << tab; cout << endl;
+	Print(brr, m);
 
 	cout << "Input number of shifts"; cin >> number_of_shifts;
 	for (int i = 0; i < number_of_shifts; i++)
@@ -53,7 +65,7 @@ int main()
 		}
 		brr[m - 1] = buffer;
 	}
-	for (int x : brr) cout << x << tab; cout << endl;
+	Print(brr, m);
 
 	return 0;
 }
